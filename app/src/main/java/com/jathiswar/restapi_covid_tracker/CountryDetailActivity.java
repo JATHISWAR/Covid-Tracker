@@ -45,12 +45,12 @@ public class CountryDetailActivity extends AppCompatActivity {
     private void fetchdata() {
        assign();
 
-
         ccountry.setText(CountrySeletion.countryModelsList.get(positionCountry).getCountry());
         ctotalcases.setText(CountrySeletion.countryModelsList.get(positionCountry).getCases());
         ctotalrecovered.setText(CountrySeletion.countryModelsList.get(positionCountry).getRecovered());
         cactivecases.setText(CountrySeletion.countryModelsList.get(positionCountry).getActive());
-        ctotalcases.setText(CountrySeletion.countryModelsList.get(positionCountry).getTodayCases());
+        ctodayrecovered.setText(CountrySeletion.countryModelsList.get(positionCountry).getRecovered());
+        ctodaycases.setText(CountrySeletion.countryModelsList.get(positionCountry).getTodayCases());
         ctotaldeaths.setText(CountrySeletion.countryModelsList.get(positionCountry).getDeaths());
         ctodaydeaths.setText(CountrySeletion.countryModelsList.get(positionCountry).getTodayDeaths());
 
