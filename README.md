@@ -7,3 +7,5 @@ Users can now get timely updates of Number of cases, Deaths, Recoveries and Covi
 <img src="https://github.com/JATHISWAR/Covid-Tracker/blob/main/Screenshot_20210319-233222.jpg" width="200" height="400">
 <img src="https://github.com/JATHISWAR/Covid-Tracker/blob/main/Screenshot_20210319-233243.jpg" width="200" height="400">
 <img src="https://github.com/JATHISWAR/Covid-Tracker/blob/main/Screenshot_20210319-233251.jpg" width="200" height="400">
+<img src="https://github.com/JATHISWAR/Covid-Tracker/blob/main/Screenshot_20210320-004739.jpg" width="200" height="400">
+<img src="https://github.com/JATHISWAR/Covid-Tracker/blob/main/Screenshot_20210320-005155.jpg" width="200" height="400">
