@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F2345"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/clinear_layout"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/cback"
+            android:layout_width="46dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/ic_back"
+            tools:layout_editor_absoluteX="350dp"
+            tools:layout_editor_absoluteY="31dp" />
+
+        <TextView
+            android:id="@+id/ctitle"
+            android:layout_width="221dp"
+            android:layout_height="51dp"
+            android:fontFamily="@font/electrolize"
+            android:text="Countries"
+            android:gravity="center"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            tools:layout_editor_absoluteX="118dp"
+            tools:layout_editor_absoluteY="40dp" />
+
+        <ImageView
+            android:id="@+id/crefresh"
+            android:layout_width="46dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            app:srcCompat="@drawable/ic_refresh"
+            tools:layout_editor_absoluteX="350dp"
+            tools:layout_editor_absoluteY="31dp" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ccardViewGraph"
+        android:layout_width="wrap_content"
+        android:layout_height="118dp"
+        android:layout_below="@+id/clinear_layout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="414dp"
+            android:layout_height="114dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <org.eazegraph.lib.charts.PieChart
+                android:id="@+id/cpiechart"
+                android:layout_width="48dp"
+                android:layout_height="90dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:padding="6dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:gravity="center_vertical">
+
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/cases" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="Total Cases" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical">
+
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/recovered" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="Recovered" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical">
+
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/deaths" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="Deaths" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical">
+
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/active" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:text="Active" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:layout_below="@id/ccardViewGraph">
+
+        <androidx.cardview.widget.CardView
+            android:layout_margin="5dp"
+            android:id="@+id/ctotal_cases"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total cases"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/ctotalcases"
+                android:layout_width="fill_parent"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="0"
+                android:textColor="@color/active"
+                android:textAlignment="textEnd"
+                android:textSize="20dp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_margin="5dp"
+            android:id="@+id/ctoday_cases"
+            android:layout_below="@+id/ctotal_cases"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today cases"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/ctodaycases"
+                android:layout_width="fill_parent"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="0"
+                android:textColor="@color/active"
+                android:textAlignment="textEnd"
+                android:textSize="20dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_margin="5dp"
+            android:id="@+id/ctotal_recovered"
+            android:layout_below="@+id/ctoday_cases"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total recovered"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/ctotalrecovered"
+                android:layout_width="fill_parent"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="0"
+                android:textColor="@color/recovered"
+                android:textAlignment="textEnd"
+                android:textSize="20dp" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_margin="5dp"
+            android:id="@+id/ctotal_deaths"
+            android:layout_below="@+id/ctoday_recovered"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total deaths"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/ctotaldeaths"
+                android:layout_width="fill_parent"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="0"
+                android:textColor="@color/deaths"
+                android:textAlignment="textEnd"
+                android:textSize="20dp" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_margin="5dp"
+            android:id="@+id/ctoday_recovered"
+            android:layout_below="@+id/ctotal_recovered"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today recovered"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/ctodayrecovered"
+                android:layout_width="fill_parent"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="0"
+                android:textColor="@color/recovered"
+                android:textAlignment="textEnd"
+                android:textSize="20dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_margin="5dp"
+            android:id="@+id/ctoday_deaths"
+            android:layout_below="@+id/ctotal_deaths"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today deaths"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/ctodaydeaths"
+                android:layout_width="fill_parent"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="0"
+                android:textColor="@color/deaths"
+                android:textAlignment="textEnd"
+                android:textSize="20dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_margin="5dp"
+            android:id="@+id/cactive_cases"
+            android:layout_below="@+id/ctoday_deaths"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active Cases"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/cactivecases"
+                android:layout_width="fill_parent"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="0"
+                android:textColor="#522808"
+                android:textAlignment="textEnd"
+                android:textSize="20dp" />
+        </androidx.cardview.widget.CardView>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
